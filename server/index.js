@@ -5,6 +5,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const app = express();
+const path = require("path");
+
 const PORT = process.env.PORT || 3001;
 
 const FILE_NAME = "boardHistory.json";
@@ -18,6 +20,8 @@ app.use(cors({
 
 app.use(express.json());
 app.use(cookieParser());
+
+app.use(express.static(path.join(__dirname, "build")));
 
 const defaultGame = {
   history: [Array(9).fill(null)],
@@ -144,6 +148,10 @@ app.post("/reset", auth, (req, res) => {
   saveGames(games);
 
   res.json(defaultGame);
+});
+
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.listen(PORT, () => {

@@ -81,7 +81,7 @@ export default function Game() {
   }, []);
 
   function loadGame() {
-    fetch("http://localhost:3001/game", {
+    fetch("/game", {
       credentials: "include"
     })
       .then((response) => {
@@ -101,7 +101,7 @@ export default function Game() {
   }
 
   function createAccount() {
-    fetch("http://localhost:3001/register", {
+    fetch("/register", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -119,7 +119,7 @@ export default function Game() {
   }
   
   function handleLogin() {
-    fetch("http://localhost:3001/login", {
+    fetch("/login", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -155,7 +155,7 @@ export default function Game() {
   setHistory(nextHistory);
   setCurrentMove(nextMove);
 
-  fetch("http://localhost:3001/game", {
+  fetch("/game", {
     method: "POST",
     credentials: "include",
     headers: {
@@ -174,7 +174,7 @@ export default function Game() {
 
 //resets the game back to empty board
 function resetGame() {
-  fetch("http://localhost:3001/reset", {
+  fetch("/reset", {
     method: "POST",
     credentials: "include",
   })
