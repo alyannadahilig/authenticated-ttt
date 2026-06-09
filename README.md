@@ -1,31 +1,35 @@
-## Tic-Tac-Toe Application
+## Installation and Setup
 
-**Note:**
-This project uses Create React App (CRA), not Vite
+**Note:** This project uses Create React App (CRA), not Vite.
 
-The client is started using:
-npm start
+### 1. Open a terminal and navigate to the server folder
 
-rather than:
-npm run dev
-
-**Installation and Setup**
-1. Open a terminal and navigate to the project folder:
-cd tic-tac-toe
-
-2. In the project folder, run:
-cd server
+```bash
+cd tic-tac-toe/server
 npm install
 node index.js
+```
 
-3. Open a second terminal and navigate to the project folder again:
-cd tic-tac-toe
-cd client
-npm install
-npm start
+### 2. Open the application
 
-4. Once both the server and client are running, open:
-http://localhost:3000
+Visit:
 
-The game state is stored on the server in boardHistory.json. After each move by X or O, the current board state is saved to
-the file.
+```txt
+http://localhost:3001
+```
+
+### Game Persistence
+
+User accounts are stored in:
+
+```txt
+users.json
+```
+
+Game state is stored in:
+
+```txt
+boardHistory.json
+```
+
+After each move, the game is automatically saved and restored when the user logs in again or refreshes the page.
