@@ -5,7 +5,7 @@
 ### 1. Open a terminal and navigate to the server folder
 
 ```bash
-cd tic-tac-toe/server
+cd authenticated-ttt/server
 npm install
 node index.js
 ```
